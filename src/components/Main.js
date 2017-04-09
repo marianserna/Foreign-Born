@@ -1,12 +1,14 @@
 import React from 'react';
 import Map from './Map';
+import Links from './Links';
 
 export default class Main extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      activeCountry: null
+      activeCountry: 'Canada',
+      showSection: 'map'
     }
   }
 
@@ -17,13 +19,22 @@ export default class Main extends React.Component {
     this.loadStories(country);
   }
 
+  changeActiveSection = (section) => {
+    this.setState({
+      showSection: section
+    });
+  }
+
   loadStories = (country) => {
 
   }
 
   render() {
     return(
-      <Map setCountry={this.setCountry}/>
+      <div>
+        <Links changeActiveSection={this.changeActiveSection} />
+        <Map setCountry={this.setCountry}/>
+      </div>
     )
   }
 }

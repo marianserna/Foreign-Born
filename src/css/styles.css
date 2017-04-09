@@ -2,8 +2,27 @@ body {
   background: #000; }
 
 p {
-  font-family: "Antic Slab", serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1rem;
-  color: red; }
+  color: #D5E1DD;
+  font-weight: 200; }
+
+.linkDiv {
+  position: absolute;
+  cursor: pointer; }
+  .linkDiv.storyFormLink {
+    top: 5%;
+    right: 5%; }
+  .linkDiv.storiesLink {
+    top: 5%;
+    left: 5%; }
+  .linkDiv.chartLink {
+    bottom: 5%;
+    left: 5%; }
+
+p.link {
+  font-size: 0.76923rem; }
+  p.link:hover {
+    color: #FF3D00; }
 
 /*# sourceMappingURL=styles.css.map */

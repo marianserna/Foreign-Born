@@ -1,0 +1,27 @@
+.linkDiv {
+  position: absolute;
+  cursor: pointer;
+
+  &.storyFormLink {
+    top: 5%;
+    right: 5%;
+  }
+
+  &.storiesLink {
+    top: 5%;
+    left: 5%;
+  }
+
+  &.chartLink {
+    bottom: 5%;
+    left: 5%;
+  }
+}
+
+p.link {
+  font-size: $p-font-size / 1.3;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}

@@ -6,6 +6,7 @@
     "firebase": "^3.7.5",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
+    "react-router-dom": "^4.0.0",
     "styled-components": "^1.4.4",
     "three": "^0.84.0"
   },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Notification extends React.Component {
   static propTypes = {
@@ -9,9 +10,11 @@ export default class Notification extends React.Component {
     const {id, country, name} = this.props.story;
 
     return(
-      <div className="notification">
-        <p>New story in {country} by {name}</p>
-      </div>
+      <Link to={`/stories/${id}`}>
+        <div className="notification">
+          <p>New story in {country} by {name}</p>
+        </div>
+      </Link>
     )
   }
 }

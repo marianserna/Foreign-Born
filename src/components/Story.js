@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Story extends React.Component {
   static propTypes = {
@@ -9,10 +10,12 @@ export default class Story extends React.Component {
     const {id, country, name, message} = this.props.story;
 
     return(
-      <div className="story">
-        <p className="intro">Read <span>{name}&apos;s</span> Story</p>
-        <p>{message.substring(0, 50)}...</p>
-      </div>
+      <Link to={`/stories/${id}`}>
+        <div className="story">
+          <p className="intro">Read <span>{name}&apos;s</span> Story</p>
+          <p>{message.substring(0, 50)}...</p>
+        </div>
+      </Link>
     )
   }
 }

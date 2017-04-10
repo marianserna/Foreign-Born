@@ -1,5 +1,5 @@
 import React from 'react';
-import * as firebase from 'firebase';
+import database from '../database';
 
 import Map from './Map';
 import Links from './Links';
@@ -19,24 +19,13 @@ export default class Main extends React.Component {
     }
   }
 
-  componentWillMount() {
-    const config = {
-      apiKey: "AIzaSyCHJxW6iYfJx-gvcHaKq5K0yxw7D-nRkXE",
-      authDomain: "foreign-born.firebaseapp.com",
-      databaseURL: "https://foreign-born.firebaseio.com",
-      projectId: "foreign-born",
-      storageBucket: "foreign-born.appspot.com",
-      messagingSenderId: "536828661131"
-    };
-    firebase.initializeApp(config);
-
-    this.database = firebase.database();
+  componentDidMount() {
     this.listenForRecent();
     this.loadStories(this.state.activeCountry);
   }
 
   listenForRecent = () => {
-    this.database.ref().child('stories').limitToLast(1).on('child_added', (snapshot) => {
+    database.ref().child('stories').limitToLast(1).on('child_added', (snapshot) => {
       const story = snapshot.val();
       story.id = snapshot.key;
 
@@ -76,11 +65,11 @@ export default class Main extends React.Component {
 
   addStory = (story) => {
     //post story to FB
-    this.database.ref().child('stories').push(story);
+    database.ref().child('stories').push(story);
   }
 
   loadStories = (country) => {
-    this.database.ref().child('stories').orderByChild('country').equalTo(country).limitToLast(15).once('value', (snapshot) => {
+    database.ref().child('stories').orderByChild('country').equalTo(country).limitToLast(15).once('value', (snapshot) => {
       const stories = [];
 
       snapshot.forEach((child) => {

@@ -44,7 +44,9 @@ export default class MapScene {
       antialias: true
     });
 
-    new THREE.OrbitControls(this.camera);
+    const orbit = new THREE.OrbitControls(this.camera);
+    orbit.enableZoom = false;
+    orbit.enablePan = false;
 
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.width(), this.height());
@@ -60,7 +62,7 @@ export default class MapScene {
   addMarker(country) {
     let depth = 10;
 
-    const spriteMap = new THREE.TextureLoader().load( "Marker-80.png" );
+    const spriteMap = new THREE.TextureLoader().load( "marker-80.png" );
     const spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
     const mesh = new THREE.Sprite( spriteMaterial );
     mesh.name = country.name;
@@ -117,7 +119,7 @@ export default class MapScene {
       mouseVector.y = 1 - 2 * ( e.offsetY / this.height() );
     }, false);
 
-    window.addEventListener('click', (e) => {
+    this.container.addEventListener('click', (e) => {
       raycaster.setFromCamera( mouseVector.clone(), this.camera );
       const intersects = raycaster.intersectObjects( this.countryMarkers.children );
       if (intersects.length > 0) {

@@ -1,0 +1,140 @@
+.form-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100vw;
+  width: 30%;
+  background: $form-bg-color;
+  padding: $form-padding;
+  transition: left 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    left: 70%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .input-container {
+    text-align: center;
+  }
+
+  .close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: $p-font-size * 2;
+    color: $link-hover-color;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    text-shadow: 1px 1px 1px #333333;
+
+    &:hover {
+      color: $form-label-color;
+      transform: rotate(360deg);
+      text-shadow: 1px 1px 1px #333333;
+    }
+  }
+}
+
+.input-row {
+  padding-bottom: 40px;
+
+  p {
+    color: $form-label-color;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+  font-family: $p-font-family;
+  font-weight: 200;
+  font-size: 1em;
+  color: $form-text-color;
+}
+
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 4px);
+  text-align: left;
+  overflow-x: hidden;
+  font-family: $p-font-family;
+  color: $form-label-color;
+  font-weight: 200;
+  font-size: $label-font-size;
+  padding-top: 15px;
+}
+
+.input-label::before, .input-label::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.input-label::before {
+  border-bottom: 1px solid $form-text-color;
+}
+
+.input-label::after {
+  border-bottom: 3px solid $button-text-color;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.5s;
+}
+
+.input-field {
+  padding: 0 5px;
+  width: 100%;
+  border: none;
+  background: none;
+  color: $form-text-color;
+  height: 40px;
+  font-family: $p-font-family;
+  font-weight: 200;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+    color: $form-text-color;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+// Label that follows input field on focus
+.input-field:focus + .input-label, .input-field.input-field--filled + .input-label {
+  color: transparent;
+}
+
+.input-field:focus + .input-label::after {
+  transform: translate3d(0, 0, 0);
+}
+
+textarea.input-field {
+  height: 70px;
+  padding: 10px;
+}
+
+textarea + .input-label {
+  height: calc(100% + 1px);
+}
+
+@media (max-width: 730px) {
+  .contact-form {
+    width: 85%;
+  }
+}

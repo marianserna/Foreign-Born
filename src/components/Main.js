@@ -6,6 +6,7 @@ import Links from './Links';
 import StoryForm from './StoryForm';
 import Notifications from './Notifications';
 import Stories from './Stories';
+import Stats from './Stats';
 
 export default class Main extends React.Component {
   constructor() {
@@ -102,6 +103,10 @@ export default class Main extends React.Component {
           active={this.state.showSection === 'Stories'}
           changeActiveSection={this.changeActiveSection}
         />
+      <Stats
+        active={this.state.showSection === 'Stats'}
+        changeActiveSection={this.changeActiveSection}
+      />
       </div>
     )
   }

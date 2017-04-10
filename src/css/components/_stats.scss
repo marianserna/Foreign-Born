@@ -1,0 +1,27 @@
+.chart-container {
+  position: absolute;
+  top: 100%;
+  // bottom: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: $chart-bg-color;
+  padding: $form-padding;
+  transition: top 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &.active {
+    top: 0%;
+  }
+
+  .chart {
+    width: 50%;
+
+    @media (max-width: 730px) {
+      width: 100%;
+    }
+  }
+}

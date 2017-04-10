@@ -14,7 +14,7 @@ export default class Links extends React.Component {
         <div className="storiesLink linkDiv" onClick={() => this.props.changeActiveSection('Stories')}>
           <p className="link">READ STORIES</p>
         </div>
-        <div className="chartLink linkDiv" onClick={() => this.props.changeActiveSection('Chart')}>
+        <div className="chartLink linkDiv" onClick={() => this.props.changeActiveSection('Stats')}>
           <p className="link">STATS</p>
         </div>
       </div>

@@ -1,0 +1,23 @@
+.intro {
+  background: $intro-bg-color;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    color: $h1-color;
+    font-family: $h1-font;
+    font-size: $h1-font-size;
+    margin-bottom: $h1-margin;
+  }
+
+  h3 {
+    color: $h3-color;
+    font-family: $notification-text-font;
+    font-weight: 200;
+    font-size: $h3-font-size;
+    margin-bottom: $h3-margin;
+  }
+}

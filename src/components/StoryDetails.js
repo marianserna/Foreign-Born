@@ -37,8 +37,10 @@ export default class StoryDetails extends React.Component {
         <Link to='/map'>
           <div className="close">&otimes;</div>
         </Link>
-        <h2>{story.name} in {story.country}</h2>
-        <p className="story-message">{story.message}</p>
+        <div className="story-details-text">
+          <h2>{story.name} in {story.country}</h2>
+          <p className="story-message">{story.message}</p>
+        </div>
       </div>
     )
   }

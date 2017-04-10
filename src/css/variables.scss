@@ -1,9 +1,14 @@
+$h1-font: 'BioRhyme', serif;
 $notification-text-font: 'Oswald', sans-serif;
 $p-font-family: 'Oswald', sans-serif;
 $p-weight: 200;
 
+$h1-font-size: 3rem;
+$h1-mobile-font-size: 2rem;
 $h2-font-size: 1.5rem;
+$h3-font-size: 1.2;
 $p-font-size: 1rem;
+$label-font-size: 0.8rem;
 
 $p-color: #424242;
 $link-hover-color: #F5F5F5;
@@ -12,10 +17,15 @@ $form-bg-color: #212121;
 $button-text-color: #424242;
 $form-label-color: #FFCCBC;
 $notification-bg-color: #DCAE1D;
+$btn-bg-color: #DCAE1D;
 $notification-text-color: #FFFFFF;
-$story-bg-color: #FF8A65;
+$story-bg-color: #DCAE1D;
+$story-bg-color-hover: #FF8A65;
 $chart-bg-color: #DCAE1D;
+$h1-color: #FFCCBC;
+$h3-color: #FFFFFF;
+$intro-bg-color: #1A202C;
 
 $form-padding: 2rem;
-
-$label-font-size: 0.8rem;
+$h1-margin: 2%;
+$h3-margin: 5%;

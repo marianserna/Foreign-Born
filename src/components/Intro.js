@@ -7,8 +7,9 @@ export default class Intro extends React.Component {
     return(
       <div className="intro">
         <h1>FOREIGN BORN</h1>
+        <h3>Celebrate Diversity</h3>
         <Link to="/map">
-          <h2>ENTER</h2>
+          <button className="intro-button">ENTER</button>
         </Link>
       </div>
     )

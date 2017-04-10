@@ -19,7 +19,7 @@ button, .button {
   text-align: center;
 
   &:hover {
-    color: #000;
+    // color: #000;
     // text-shadow: 1px 1px 1px #333333;
     transition: all 0.5s ease-in-out;
   }
@@ -34,7 +34,7 @@ button:after, .button:after {
   height: 100%;
   top: 0;
   left: 0;
-  // background-color: rgba(255, 255, 255, 0.4);
+  background-color: $btn-bg-color;
   z-index: -1;
 }
 

@@ -12,7 +12,7 @@ export default class Story extends React.Component {
     return(
       <Link to={`/stories/${id}`}>
         <div className="story">
-          <p className="intro">Read <span>{name}&apos;s</span> Story</p>
+          <p className="story-intro">Read <span>{name}&apos;s</span> Story</p>
           <p>{message.substring(0, 50)}...</p>
         </div>
       </Link>

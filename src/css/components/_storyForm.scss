@@ -130,7 +130,12 @@ textarea + .input-label {
 }
 
 @media (max-width: 730px) {
-  .contact-form {
-    width: 85%;
+  .form-container {
+    width: 100%;
+    left: 0;
+
+    .contact-form {
+      width: 90%;
+    }
   }
 }

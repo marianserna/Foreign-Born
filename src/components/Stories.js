@@ -15,7 +15,7 @@ export default class Stories extends React.Component {
         <div className="close" onClick={() => {this.props.changeActiveSection('Map')}}>&otimes;</div>
         <h2 className="input-row">Stories in <span>{this.props.country}</span></h2>
 
-        <div className="stories">
+        <div className="stories-stack">
           {
             this.props.stories.map((story) => {
               return(

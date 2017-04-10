@@ -15,3 +15,16 @@ p {
   color: $p-color;
   font-weight: $p-weight;
 }
+
+h2 {
+  color: $form-label-color;
+  font-family: $p-font-family;
+  font-weight: 200;
+  font-size: $h2-font-size;
+  line-height: 2.5rem;
+  text-align: center;
+
+  span {
+    color: $notification-bg-color;
+  }
+}

@@ -1,0 +1,12 @@
+.notifications {
+  position: absolute;
+  right: 3%;
+  bottom: 5%;
+  z-index: 10;
+  width: 25%;
+  text-align: center;
+
+  @media (max-width: 730px) {
+    width: 90%;
+  }
+}

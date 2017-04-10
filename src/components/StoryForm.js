@@ -49,7 +49,7 @@ export default class StoryForm extends React.Component {
         <form ref={(form) => this.form = form} onSubmit={(e) => {this.onSubmit(e)}} className="contact-form">
 
           <div className="input-row">
-            <p>Tell us the story of how you got to {this.props.country}!</p>
+            <h2>Tell us the story of how you got to <span>{this.props.country}</span>!</h2>
           </div>
 
           <div className="input-row">

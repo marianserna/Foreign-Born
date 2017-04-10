@@ -60,6 +60,38 @@ p {
   color: #424242;
   font-weight: 200; }
 
+h2 {
+  color: #FFCCBC;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center; }
+  h2 span {
+    color: #DCAE1D; }
+
+.notification, .story {
+  margin: 5px;
+  padding: 15px;
+  border-radius: 2px;
+  background: #DCAE1D;
+  line-height: 1.6rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .notification p, .story p {
+    font-family: "Oswald", sans-serif;
+    color: #FFFFFF; }
+
+.notifications {
+  position: absolute;
+  right: 3%;
+  bottom: 5%;
+  z-index: 10;
+  width: 25%;
+  text-align: center; }
+  @media (max-width: 730px) {
+    .notifications {
+      width: 90%; } }
+
 .linkDiv {
   position: absolute;
   cursor: pointer; }
@@ -113,8 +145,6 @@ p.link {
 
 .input-row {
   padding-bottom: 40px; }
-  .input-row p {
-    color: #FFCCBC; }
 
 .input-wrapper {
   position: relative;
@@ -188,6 +218,51 @@ textarea + .input-label {
 @media (max-width: 730px) {
   .contact-form {
     width: 85%; } }
+.stories-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30%;
+  width: 30%;
+  background: #212121;
+  padding: 2rem;
+  transition: left 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .stories-container.active {
+    left: 0%; }
+  .stories-container .close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 2rem;
+    color: #F5F5F5;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    text-shadow: 1px 1px 1px #333333; }
+    .stories-container .close:hover {
+      color: #FFCCBC;
+      transform: rotate(360deg);
+      text-shadow: 1px 1px 1px #333333; }
+
+.stories {
+  width: 100%;
+  text-align: left; }
+
+.story {
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .story:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: #FF8A65; }
+  .story .intro {
+    color: #424242;
+    padding-bottom: 10px;
+    padding-top: 10px; }
+
 button, .button {
   margin-top: 60px;
   padding: 10px;

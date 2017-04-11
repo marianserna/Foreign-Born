@@ -4,10 +4,12 @@ window.THREE = THREE;
 require('three/examples/js/controls/OrbitControls.js');
 
 export default class MapScene {
-  constructor(container, setCountry) {
+  constructor(container, setCountry, showLabel, hideLabel) {
     this.container = container;
     this.setCountry = setCountry;
     this.earthScale = 200;
+    this.showLabel = showLabel;
+    this.hideLabel = hideLabel;
 
     this.countries = [
       { name: 'Canada', lat: 56.130366, lon: -106.346771 },
@@ -110,23 +112,36 @@ export default class MapScene {
   }
 
   addRayCasting() {
-    const raycaster = new THREE.Raycaster();
+    this.raycaster = new THREE.Raycaster();
     //last position of the mouse
     const mouseVector = new THREE.Vector2();
 
     window.addEventListener('mousemove', (e) => {
       mouseVector.x = 2 * (e.offsetX / this.width()) - 1;
       mouseVector.y = 1 - 2 * ( e.offsetY / this.height() );
+
+      this.updateLabel(e.offsetX, e.offsetY, mouseVector);
     }, false);
 
     this.container.addEventListener('click', (e) => {
-      raycaster.setFromCamera( mouseVector.clone(), this.camera );
-      const intersects = raycaster.intersectObjects( this.countryMarkers.children );
+      this.raycaster.setFromCamera( mouseVector.clone(), this.camera );
+      const intersects = this.raycaster.intersectObjects( this.countryMarkers.children );
       if (intersects.length > 0) {
         const closest = intersects[0];
         this.setCountry(closest.object.name);
       }
     }, false);
+  }
+
+  updateLabel(mouseX, mouseY, mouseVector) {
+    this.raycaster.setFromCamera( mouseVector.clone(), this.camera );
+    const intersects = this.raycaster.intersectObjects( this.countryMarkers.children );
+    if (intersects.length > 0) {
+      const closest = intersects[0];
+      this.showLabel(mouseX, mouseY, closest.object.name);
+    } else {
+      this.hideLabel();
+    }
   }
 
 

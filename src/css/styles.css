@@ -296,7 +296,7 @@ textarea + .input-label {
     left: 0; } }
 .story-details {
   position: relative;
-  width: 40%;
+  width: 90%;
   height: 100vh;
   margin: 0 auto;
   text-align: center;
@@ -310,10 +310,11 @@ textarea + .input-label {
     margin: 0 auto; }
     .story-details .story-details-text h2 {
       margin-top: 10%;
-      margin-bottom: 10%; }
+      margin-bottom: 5%; }
     .story-details .story-details-text p {
       line-height: 1.5rem;
-      text-align: left; }
+      font-size: 1.2rem;
+      text-align: center; }
 
 @media (max-width: 730px) {
   .story-details {
@@ -359,6 +360,14 @@ textarea + .input-label {
     font-weight: 200;
     font-size: 1.2;
     margin-bottom: 5%; }
+
+.map-label {
+  position: absolute;
+  padding: 10px;
+  background: #212121;
+  font-family: "Oswald", sans-serif;
+  color: #DCAE1D;
+  font-weight: 200; }
 
 button, .button {
   margin-top: 60px;

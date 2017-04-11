@@ -1,6 +1,6 @@
 .story-details {
   position: relative;
-  width: 40%;
+  width: 90%;
   height: 100vh;
   margin: 0 auto;
   text-align: center;
@@ -16,12 +16,13 @@
 
     h2 {
       margin-top: $h3-margin * 2;
-      margin-bottom: $h3-margin * 2;
+      margin-bottom: $h3-margin;
     }
 
     p {
       line-height: 1.5rem;
-      text-align: left;
+      font-size: $p-font-size * 1.2;
+      text-align: center;
     }
   }
 }

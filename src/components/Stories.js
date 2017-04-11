@@ -13,7 +13,7 @@ export default class Stories extends React.Component {
     return(
       <div className={`stories-container ${this.props.active ? 'active' : ''}`}>
         <div className="close" onClick={() => {this.props.changeActiveSection('Map')}}>&otimes;</div>
-        <h2 className="input-row">Stories in <span>{this.props.country}</span></h2>
+        <h2 className="input-row">Stories from <span>{this.props.country}</span></h2>
 
         <div className="stories-stack">
           {

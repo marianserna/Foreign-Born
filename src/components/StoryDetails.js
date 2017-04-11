@@ -38,7 +38,7 @@ export default class StoryDetails extends React.Component {
           <div className="close">&otimes;</div>
         </Link>
         <div className="story-details-text">
-          <h2>{story.name} in {story.country}</h2>
+          <h2>{story.name} in <span>{story.country}</span></h2>
           <p className="story-message">{story.message}</p>
         </div>
       </div>

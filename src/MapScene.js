@@ -67,7 +67,7 @@ export default class MapScene {
   addMarker(country) {
     let depth = 10;
 
-    const spriteMap = new THREE.TextureLoader().load( "marker-80.png" );
+    const spriteMap = new THREE.TextureLoader().load( "/Marker-80.png" );
     const spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
     const mesh = new THREE.Sprite( spriteMaterial );
     mesh.name = country.name;

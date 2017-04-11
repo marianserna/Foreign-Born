@@ -4,17 +4,17 @@
 
   &.storyFormLink {
     top: 5%;
-    right: 5%;
+    right: 5vw;
   }
 
   &.storiesLink {
     top: 5%;
-    left: 5%;
+    left: 5vw;
   }
 
   &.chartLink {
     bottom: 5%;
-    left: 5%;
+    left: 5vw;
   }
 }
 
@@ -25,4 +25,28 @@ p.link {
   &:hover {
     color: $link-hover-color;
   }
+}
+
+p.link:before {
+  position: absolute;
+  top: 50%;
+  width: 0px;
+  display: block;
+  content: '';
+  height: 1px;
+  transform: translateY(-50%);
+  background: $link-hover-color;
+  transition: width 0.5s ease;
+}
+
+p.link:hover:before {
+  width: 5vw;
+}
+
+p.link.left:before {
+  right: 105%;
+}
+
+p.link.right:before {
+  left: 105%;
 }

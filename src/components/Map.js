@@ -20,7 +20,16 @@ export default class Map extends React.Component {
   }
 
   componentDidMount() {
-    new MapScene(this.container, this.props.setCountry, this.showLabel, this.hideLabel);
+    this.mapScene = new MapScene(
+      this.container,
+      this.props.setCountry,
+      this.showLabel,
+      this.hideLabel
+    );
+  }
+
+  componentWillUnmount() {
+    this.mapScene.stopRendering();
   }
 
   showLabel = (mouseX, mouseY, country) => {

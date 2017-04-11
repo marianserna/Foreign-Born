@@ -10,11 +10,14 @@ export default class MapScene {
     this.earthScale = 200;
     this.showLabel = showLabel;
     this.hideLabel = hideLabel;
+    this.isRendering = true;
 
     this.countries = [
       { name: 'Canada', lat: 56.130366, lon: -106.346771 },
       { name: 'United States', lat: 37.09024, lon: -95.712891 },
       { name: 'France', lat: 46.227638, lon: 2.213749 },
+      { name: 'Denmark', lat: 56.26392, lon: 9.501785 },
+      { name: 'Germany', lat: 51.165691, lon: 10.451526 }
     ]
 
     this.init();
@@ -144,6 +147,9 @@ export default class MapScene {
     }
   }
 
+  stopRendering() {
+    this.isRendering = false;
+  }
 
   handleResize() {
     this.renderer.setSize(this.width(), this.height());
@@ -152,6 +158,8 @@ export default class MapScene {
   }
 
   loop() {
+    if (!this.isRendering) return;
+
     this.render();
     requestAnimationFrame(() => {
       this.loop();

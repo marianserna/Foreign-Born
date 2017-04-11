@@ -117,19 +117,39 @@ a {
   cursor: pointer; }
   .linkDiv.storyFormLink {
     top: 5%;
-    right: 5%; }
+    right: 5vw; }
   .linkDiv.storiesLink {
     top: 5%;
-    left: 5%; }
+    left: 5vw; }
   .linkDiv.chartLink {
     bottom: 5%;
-    left: 5%; }
+    left: 5vw; }
 
 p.link {
   font-size: 0.76923rem;
   transition: color 0.4s ease; }
   p.link:hover {
     color: #F5F5F5; }
+
+p.link:before {
+  position: absolute;
+  top: 50%;
+  width: 0px;
+  display: block;
+  content: '';
+  height: 1px;
+  transform: translateY(-50%);
+  background: #F5F5F5;
+  transition: width 0.5s ease; }
+
+p.link:hover:before {
+  width: 5vw; }
+
+p.link.left:before {
+  right: 105%; }
+
+p.link.right:before {
+  left: 105%; }
 
 .form-container {
   position: absolute;
@@ -338,7 +358,7 @@ textarea + .input-label {
   .chart-container.active {
     top: 0%; }
   .chart-container .chart {
-    width: 50%; }
+    width: 45%; }
     @media (max-width: 730px) {
       .chart-container .chart {
         width: 100%; } }

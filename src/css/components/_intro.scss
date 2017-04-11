@@ -1,23 +1,43 @@
 .intro {
-  background: $intro-bg-color;
+  background-image: url('/adventure.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 60px;
 
   h1 {
-    color: $h1-color;
+    color: #FFF;
     font-family: $h1-font;
     font-size: $h1-font-size;
     margin-bottom: $h1-margin;
+    text-shadow: 1px 1px 1px #333333;
   }
 
   h3 {
-    color: $h3-color;
+    color: $h1-color;
     font-family: $notification-text-font;
     font-weight: 200;
     font-size: $h3-font-size;
     margin-bottom: $h3-margin;
+  }
+
+  button {
+    background-color: transparent;
+    box-shadow: 0 4px 7px rgba(0,0,0,0.25), 0 3px 3px rgba(0,0,0,0.22);
+  }
+
+  h1, h3, a {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 730px) {
+  .intro h1 {
+    font-size: $h2-font-size * 1.3;
   }
 }

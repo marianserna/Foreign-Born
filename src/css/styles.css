@@ -237,8 +237,9 @@ textarea + .input-label {
 
 @media (max-width: 730px) {
   .form-container {
-    width: 100%;
-    left: 0; }
+    width: 100%; }
+    .form-container.active {
+      left: 0%; }
     .form-container .contact-form {
       width: 90%; } }
 .stories-container {
@@ -293,7 +294,7 @@ textarea + .input-label {
 @media (max-width: 730px) {
   .stories-container {
     width: 100%;
-    left: 0; } }
+    left: -100%; } }
 .story-details {
   position: relative;
   width: 90%;
@@ -343,24 +344,37 @@ textarea + .input-label {
         width: 100%; } }
 
 .intro {
-  background: #1A202C;
+  background-image: url("/adventure.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  flex-direction: column; }
+  align-items: flex-end;
+  padding-right: 60px; }
   .intro h1 {
-    color: #FFCCBC;
+    color: #FFF;
     font-family: "BioRhyme", serif;
     font-size: 3rem;
-    margin-bottom: 2%; }
+    margin-bottom: 2%;
+    text-shadow: 1px 1px 1px #333333; }
   .intro h3 {
-    color: #FFFFFF;
+    color: #DCAE1D;
     font-family: "Oswald", sans-serif;
     font-weight: 200;
     font-size: 1.2;
     margin-bottom: 5%; }
+  .intro button {
+    background-color: transparent;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.22); }
+  .intro h1, .intro h3, .intro a {
+    opacity: 0; }
 
+@media (max-width: 730px) {
+  .intro h1 {
+    font-size: 1.95rem; } }
 .map-label {
   position: absolute;
   padding: 10px;
@@ -387,7 +401,8 @@ button, .button {
   text-decoration: none;
   font-weight: 200;
   text-shadow: none;
-  text-align: center; }
+  text-align: center;
+  background: transparent; }
   button:hover, .button:hover {
     transition: all 0.5s ease-in-out; }
 

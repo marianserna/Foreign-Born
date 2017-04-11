@@ -116,7 +116,7 @@ export default class MapScene {
     //last position of the mouse
     const mouseVector = new THREE.Vector2();
 
-    window.addEventListener('mousemove', (e) => {
+    this.container.addEventListener('mousemove', (e) => {
       mouseVector.x = 2 * (e.offsetX / this.width()) - 1;
       mouseVector.y = 1 - 2 * ( e.offsetY / this.height() );
 

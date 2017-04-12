@@ -1,5 +1,8 @@
 import React from 'react';
-import { Chart } from 'chart.js';
+// import { Chart } from 'chart.js';
+import Highcharts from 'highcharts';
+require('highcharts-more')(Highcharts);
+import '../HighchartsTheme';
 
 export default class Stats extends React.Component {
   static propTypes = {
@@ -7,42 +10,62 @@ export default class Stats extends React.Component {
     changeActiveSection: React.PropTypes.func.isRequired
   }
 
-  constructor() {
-    super();
-    this.data = {
-      labels: ['Canada', 'USA', 'France', 'Denmark', 'Germany'],
-      datasets: [
-        {
-          label: '2005',
-          data: [18.691, 12.104, 11.294, 6.466, 12.610],
-          backgroundColor: 'rgba(255, 255, 255, 0.3)',
-        },
-        {
-          label: '2007',
-          data: [19.229, 12.631, 11.505, 6.933, 12.800],
-          backgroundColor: 'rgba(255, 90, 9, 0.4)',
-        },
-        {
-          label: '2009',
-          data: [19.621, 12.535, 11.639, 7.503, 12.920],
-          backgroundColor: 'rgba(122, 207, 214, 0.4)',
-        },
-        {
-          label: '2013',
-          data: [19.993, 13.079, 12.040, 8.478, 12.776],
-          backgroundColor: 'rgba(116,82,133, 0.4)',
-        },
-      ]
-    }
-  }
-
   componentDidMount() {
-    new Chart(this.canvas, {
-      type: 'radar',
-      data: this.data,
-      options: {
-        responsive: true
-      }
+
+    Highcharts.chart('chart', {
+      chart: {
+        polar: true,
+        type: 'line'
+      },
+      title: {
+        text: 'Foreign Born Population',
+        x: -20
+      },
+      pane: {
+        size: '80%'
+      },
+      xAxis: {
+        categories: ['Canada', 'USA', 'France', 'Denmark', 'Germany'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+      },
+      yAxis: {
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0
+      },
+      tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.2f}</b><br/>'
+      },
+      legend: {
+        align: 'right',
+        verticalAlign: 'top',
+        y: 70,
+        layout: 'vertical'
+      },
+      series: [
+        {
+          name: '2005',
+          data: [18.691, 12.104, 11.294, 6.466, 12.610],
+          pointPlacement: 'on'
+        },
+        {
+          name: '2007',
+          data: [19.229, 12.631, 11.505, 6.933, 12.800],
+          pointPlacement: 'on'
+        },
+        {
+          name: '2009',
+          data: [19.621, 12.535, 11.639, 7.503, 12.920],
+          pointPlacement: 'on'
+        },
+        {
+          name: '2013',
+          data: [19.993, 13.079, 12.040, 8.478, 12.776],
+          pointPlacement: 'on'
+        }
+      ]
     });
   }
 
@@ -50,9 +73,7 @@ export default class Stats extends React.Component {
     return(
       <div className={`chart-container ${this.props.active ? 'active' : ''}`}>
         <div className="close" onClick={() => {this.props.changeActiveSection('Map')}}>&otimes;</div>
-        <div className="chart">
-          <canvas ref={(canvas) => this.canvas = canvas}></canvas>
-        </div>
+        <div className="chart" id="chart"></div>
       </div>
     )
   }

@@ -46,7 +46,7 @@ export default class Intro extends React.Component {
     return(
       <div className="intro">
         <h1>FOREIGN BORN</h1>
-        <h3>Each person is fighting its own battle. Be kind.</h3>
+        <h3>Be kind. Each person is fighting its own battle.</h3>
         <a href="#" onClick={(e) => {this.transitionTo(e)}}>
           <button className="intro-button">ENTER</button>
         </a>

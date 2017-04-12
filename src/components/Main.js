@@ -18,6 +18,7 @@ export default class Main extends React.Component {
       notifications: [],
       stories: []
     }
+    this.countryStoriesRef = database.ref();
   }
 
   componentDidMount() {
@@ -70,7 +71,8 @@ export default class Main extends React.Component {
   }
 
   loadStories = (country) => {
-    database.ref().child('stories').orderByChild('country').equalTo(country).limitToLast(15).once('value', (snapshot) => {
+    this.countryStoriesRef.off();
+    this.countryStoriesRef.child('stories').orderByChild('country').equalTo(country).limitToLast(15).on('value', (snapshot) => {
       const stories = [];
 
       snapshot.forEach((child) => {
@@ -80,7 +82,7 @@ export default class Main extends React.Component {
       });
 
       this.setState({
-        stories: stories
+        stories: stories.reverse()
       });
     })
   }

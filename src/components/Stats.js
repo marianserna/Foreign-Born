@@ -1,5 +1,6 @@
+// CHART COMPONENT FOR STATS
+
 import React from 'react';
-// import { Chart } from 'chart.js';
 import Highcharts from 'highcharts';
 require('highcharts-more')(Highcharts);
 import '../HighchartsTheme';

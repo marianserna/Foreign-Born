@@ -1,3 +1,5 @@
+// CONTAINS A SERIES OF INDIVIDUAL STORIES
+
 import React from 'react';
 import Story from './Story';
 

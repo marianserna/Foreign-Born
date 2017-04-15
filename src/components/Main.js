@@ -1,3 +1,5 @@
+// RENDERS ALL COMPONENTS
+
 import React from 'react';
 import database from '../database';
 
@@ -26,6 +28,7 @@ export default class Main extends React.Component {
     this.loadStories(this.state.activeCountry);
   }
 
+  // Real time component: Listens for latest added story and displays it for 5 secs.
   listenForRecent = () => {
     database.ref().child('stories').limitToLast(1).on('child_added', (snapshot) => {
       const story = snapshot.val();
@@ -41,8 +44,8 @@ export default class Main extends React.Component {
     })
   }
 
+  // Selects all notifications that aren't the one I'm trying to remove
   removeNotification = (id) => {
-    // Selects all notifications that aren't the one I'm trying to remove
     const newNotifications = this.state.notifications.filter((notification) => {
       return notification.id !== id;
     });
@@ -65,11 +68,12 @@ export default class Main extends React.Component {
     });
   }
 
+  //post story to FBase
   addStory = (story) => {
-    //post story to FBase
     database.ref().child('stories').push(story);
   }
 
+  // Load stories that go in the story list based on the country
   loadStories = (country) => {
     this.countryStoriesRef.off();
     this.countryStoriesRef.child('stories').

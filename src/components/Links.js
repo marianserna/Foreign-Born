@@ -1,3 +1,5 @@
+// MAP PAGE LINKS
+
 import React from 'react';
 
 export default class Links extends React.Component {

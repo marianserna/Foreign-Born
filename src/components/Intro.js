@@ -1,3 +1,5 @@
+// LANDING PAGE
+
 import React from 'react';
 import { TweenMax, TimelineLite } from 'gsap';
 import { firebase } from '../database';
@@ -11,6 +13,7 @@ export default class Intro extends React.Component {
     this.handleSignin();
   }
 
+  // Signing in with Firebase Facebook Auth
   handleSignin = () => {
   // Adds an observer for auth state changes.
     firebase.auth().onAuthStateChanged((user) => {
@@ -21,6 +24,12 @@ export default class Intro extends React.Component {
     });
   }
 
+  signIn = (e) => {
+    e.preventDefault();
+    firebase.auth().signInWithPopup(this.provider);
+  }
+
+  // Landing animations
   componentDidMount() {
     const timeline = new TimelineLite();
 
@@ -31,11 +40,6 @@ export default class Intro extends React.Component {
       {opacity: 1, y: 0, ease: TweenMax.Elastic.easeOut, delay: 0.5},
       0.5
     );
-  }
-
-  signIn = (e) => {
-    e.preventDefault();
-    firebase.auth().signInWithPopup(this.provider);
   }
 
   transitionTo = () => {
@@ -50,6 +54,7 @@ export default class Intro extends React.Component {
     );
   }
 
+  // Removing langing page
   removeIntro = () => {
     TweenMax.fromTo(
       '.intro',
@@ -59,6 +64,7 @@ export default class Intro extends React.Component {
     );
   }
 
+  // From landing to map
   redirect = () => {
     this.props.history.push('/map');
   }

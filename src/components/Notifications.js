@@ -1,3 +1,5 @@
+// IF THERE ARE MORE THAN ONE NOTIFICATION AT A TIME
+
 import React from 'react';
 import Notification from './Notification';
 

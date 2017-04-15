@@ -1,3 +1,5 @@
+// SHOW/READ AN INDIVIDUAL STORY
+
 import React from 'react';
 import database from '../database';
 import { Link } from 'react-router-dom';

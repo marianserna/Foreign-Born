@@ -1,1 +1,5 @@
-.main {}
+@media (max-width: 730px) {
+  .main {
+    position: fixed;
+  }
+}

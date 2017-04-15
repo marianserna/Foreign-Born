@@ -1,3 +1,5 @@
+// FORM TO WRITE/SHARE YOUR STORY
+
 import React from 'react';
 
 export default class StoryForm extends React.Component {

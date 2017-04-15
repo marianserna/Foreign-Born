@@ -1,3 +1,5 @@
+// INITIALIZES MAP SCENE & ADDS LABELS TO MARKERS
+
 import React from 'react';
 import MapScene from '../MapScene';
 

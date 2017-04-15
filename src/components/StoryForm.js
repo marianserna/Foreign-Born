@@ -1,5 +1,4 @@
 import React from 'react';
-// import {TweenMax, TimelineLite} from 'gsap';
 
 export default class StoryForm extends React.Component {
   static propTypes = {
@@ -54,8 +53,8 @@ export default class StoryForm extends React.Component {
 
           <div className="input-row">
             <span className="input-wrapper">
-              <input className="input-field" type="text" id="name" name="name" required ref={(input) => this.name = input} onChange={(e) => this.onToggleLabel(e)} />
-              <label className="input-label" htmlFor="name">Name</label>
+              <input className="input-field" type="text" id="name" name="name" required ref={(input) => this.name = input} onChange={(e) => this.onToggleLabel(e)} value={sessionStorage.getItem('userName')} />
+              <label className="input-label" htmlFor="name"></label>
             </span>
           </div>
 

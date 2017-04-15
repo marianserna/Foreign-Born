@@ -7,11 +7,9 @@
   background: $form-bg-color;
   padding: $form-padding;
   transition: left 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   z-index: 10;
+  height: 100vh;
+  overflow-y: scroll;
 
   &.active {
     left: 0%;

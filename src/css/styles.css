@@ -271,11 +271,9 @@ textarea + .input-label {
   background: #212121;
   padding: 2rem;
   transition: left 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 10; }
+  z-index: 10;
+  height: 100vh;
+  overflow-y: scroll; }
   .stories-container.active {
     left: 0%; }
   .stories-container .close {

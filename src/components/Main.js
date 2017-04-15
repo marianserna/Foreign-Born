@@ -66,13 +66,15 @@ export default class Main extends React.Component {
   }
 
   addStory = (story) => {
-    //post story to FB
+    //post story to FBase
     database.ref().child('stories').push(story);
   }
 
   loadStories = (country) => {
     this.countryStoriesRef.off();
-    this.countryStoriesRef.child('stories').orderByChild('country').equalTo(country).limitToLast(15).on('value', (snapshot) => {
+    this.countryStoriesRef.child('stories').
+      orderByChild('country').equalTo(country).limitToLast(15).
+      on('value', (snapshot) => {
       const stories = [];
 
       snapshot.forEach((child) => {
@@ -89,7 +91,7 @@ export default class Main extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="main">
         <Links changeActiveSection={this.changeActiveSection} />
         <Map setCountry={this.setCountry}/>
         <StoryForm

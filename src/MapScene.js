@@ -100,7 +100,7 @@ export default class MapScene {
     // rotating by 0.5 so that markers show up in the right lat & lon
     mesh.rotation.y += Math.PI / 2;
     this.scene.add(mesh);
-    // rotating scene to have Canada centered for user
+    // rotating scene to have Canada
     this.scene.rotation.y -= Math.PI / 2;
     this.scene.rotation.z -= Math.PI / 6;
   }

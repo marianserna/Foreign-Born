@@ -73,7 +73,7 @@ export default class Intro extends React.Component {
     return(
       <div className="intro">
         <h1>FOREIGN BORN</h1>
-        <h3>Be kind. Each person is fighting its own battle.</h3>
+        <h3>Be kind. Each person is fighting their own battle.</h3>
         <a href="#" onClick={(e) => {this.signIn(e)}}>
           <button className="intro-button">ENTER</button>
         </a>
